@@ -1,0 +1,73 @@
+html{
+    margin: 0;
+}
+
+body {
+    /* font-family: 'Segoe UI', Tahoma, sans-serif; */
+    font-size: 100%;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+/* Menu topo */
+#logo{
+    padding: 5px 0 10px 0;
+}
+
+.bem-vindo{
+    width: 76%;
+    margin: 11px 0 10px 0;
+    text-align: left;
+}
+
+.navbar {
+    /* background-color: #b4b8bb; */
+    background-color: #55cfa6;
+}
+
+.offline {
+    transition: -webkit-filter 1.5s cubic-bezier(0.65, 0.05, 0.36, 1), background-color 1.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+    will-change: -webkit-filter, background-color;
+}
+
+.nav-link:hover{
+    text-shadow: 0 0 4px #fff, 0 0 4px #fff;
+    transition-property: text-shadow;
+    transition-duration: 0.5s;
+    -webkit-transition-property: text-shadow;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-property: text-shadow;
+    -moz-transition-duration: 0.5s;
+}
+
+.sidebar{
+    border-right: 1px solid #DEDFE0;
+}
+
+/* Menu lateral */
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    padding-top: 73px;
+    overflow-y: auto;
+}
+
+.sidebar-sticky .nav-link{
+    color: rgb(155, 153, 153);
+    font-weight: bold
+}
+
+.sidebar-sticky .nav-link:hover{
+    color: rgb(71, 71, 71);
+    transition-property: color;
+    transition-duration: 0.8s;
+    -webkit-transition-property: color;
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-property: color;
+    -moz-transition-duration: 0.8s;
+}
+
+main{
+    padding-top: 65px;
+}
