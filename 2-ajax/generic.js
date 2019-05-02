@@ -1,13 +1,13 @@
 
 // Exibe menssagem
-function displaysMessage(element, elementClass, msg, timeOut)
+function displayMessage(element, elementClass, msg, timeOut)
 {
     var disp = element.style.display;
 
     element.style.display = disp == 'none' ? 'block' : 'none';
     element.classList.add(elementClass);
     element.innerHTML = msg;
-    //hiddenMessage(element, elementClass, timeOut);
+    hiddenMessage(element, elementClass, timeOut);
 }
 
 // Oculta mensagem

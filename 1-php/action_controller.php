@@ -27,8 +27,14 @@
         {
             $array_parameters = array($user, $pass);
             $table_login = $this->obj_query->exec_query_login($str_table_name, 'LOGIN', $array_parameters);
-            // $table_login = is_array($table_login) ? json_encode($table_login) : "error";
-            $table_login = $table_login->rowCount() == 1 ? $user : "error";
+            $table_login = is_array($table_login) ? json_encode($table_login) : "error";
             return $table_login;
+        }
+
+        public function logout()
+        {
+            session_start();
+            session_destroy();
+            header('location: ../index.php');
         }
     }

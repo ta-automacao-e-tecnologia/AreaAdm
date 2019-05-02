@@ -15,6 +15,7 @@
     <body>
       <form id="login_form">
         <img class="mb-4" src="7-img/logo.png" alt="Ta Automação">
+        <div class="alert text-center" role="alert" id="msg" style="display: none;"></div>
         <h1 class="h5 mb-2 font-weight-normal">Área Administrativa</h1>
         <label for="inputEmail" class="sr-only">e-mail</label>
         <input type="text" id="inputEmail" class="form-control" name="email" placeholder="E-mail" required autofocus>
@@ -35,7 +36,7 @@
       
       <!-- AJAX -->
       <script src="0-php-framework/Ajax/xhttp.js"></script>
-      <script src="2-ajax/test_functions.js"></script>
       <script src="2-ajax/generic.js"></script>
+      <script src="2-ajax/login.js"></script>
     </body>
   </html>

@@ -1,5 +1,10 @@
-<?php 
+<?php
     session_start();
+
+    if(!isset($_SESSION['email']))
+    {
+        header('location: ../../index.php');
+    }
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -12,17 +17,17 @@
 
         <title>Area Adminstrativa - Home</title>
 
-        <link rel="stylesheet" href="../4-css/bootstrap.min.css">
-        <link rel="stylesheet" href="../4-css/home.css">
+        <link rel="stylesheet" href="../../4-css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../4-css/home.css">
     </head>
 
     <body>
         <nav class="navbar navbar-dark fixed-top flex-md-nowrap p-0 shadow">
-            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><img id="logo" src="../7-img/logo.png" alt="Ta Automacao" width="75%" height="75%"></a>
+            <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><img id="logo" src="../../7-img/logo.png" alt="Ta Automacao" width="75%" height="75%"></a>
             <p id="bem_vindo" class="bem-vindo text-white"><?php echo "Bem vindo " . $_SESSION['email'] ?></p>
             <ul class="navbar-nav px-3">
                 <li class="nav-item text-nowrap">
-                <a class="nav-link text-white" href="#">Sair</a>
+                <a class="nav-link text-white" href="../../1-php/logout.php" id='logout'>Sair</a>
                 </li>
             </ul>
         </nav>
@@ -70,7 +75,6 @@
                         </ul>
                     </div>
                 </nav>
-            
 
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -95,8 +99,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         
         <!-- AJAX -->
-        <script src="../0-php-framework/Ajax/xhttp.js"></script>
-        <script src="../2-ajax/test_functions.js"></script>
-        <script src="../2-ajax/generic.js"></script>
+        <script src="../../0-php-framework/Ajax/xhttp.js"></script>
+        <script src="../../2-ajax/generic.js"></script>
     </body>
 </html>

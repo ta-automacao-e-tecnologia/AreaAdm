@@ -38,3 +38,10 @@ button:hover{
     -moz-transition-property: text-shadow;
     -moz-transition-duration: 0.5s;
 }
+
+#msg{
+    background-color: rgb(231, 199, 199);
+    color:rgb(145, 4, 4);
+    margin-top: 20px;
+    padding: 0;
+}

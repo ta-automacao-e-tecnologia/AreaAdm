@@ -1,33 +1,40 @@
 <?php
 
+    // AJAX
     require_once 'action_controller.php';
 
-    $db_table = 'usuarios';
-
-    $txt_email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
-    $txt_pass = filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_STRING);
-
-    $control = new controller();
-
-    $login = $control->login($db_table, $txt_email, $txt_pass);
-
-    if($login == $txt_email)
+    // Caso não exista sessão aberta
+    if(!isset($_SESSION['email']))
     {
-        session_start();
-        $_SESSION['email'] = $login;
+        $db_table = 'usuarios';
+
+        $txt_email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+        $txt_pass = filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_STRING);
+
+        $control = new controller();
+        $login = $control->login($db_table, $txt_email, $txt_pass);
+
+        $arr = json_decode($login, true);
+
+        if (json_last_error() === 0)
+        {
+            if($arr[0]['email'] == $txt_email)
+            {
+                session_start();
+                $_SESSION['email'] = $arr[0]['email'];
+                echo "";
+            }
+            else
+            {
+                echo $login;
+            }
+        }
+        else
+        {
+            echo $login;
+        }  
+    } 
+    else
+    {
+        echo ""; // Caso já exista sessão aberta
     }
-
-    // if(is_object($json))
-    // {
-    //     $json = json_decode($json);
-    //     session_start();
-    //     $json = $json->{'email'};
-    //     $_SESSION['email'] = 'foi';
-    //     $json = "e obj";
-    // }
-    // else
-    // {
-    //     $json = "Usuário ou seja incorretos!";
-    // }
-
-    echo $login;
